@@ -1,0 +1,86 @@
+<section class="py-10">
+  <div class="container">
+    <div class="ml-4 sm:ml-0 inline-block">
+      <h2 class="relative pb-3 text-2xl sm:text-3xl font-semibold after:content-[''] after:absolute after:-left-3 after:top-[38%] after:h-[62%] after:w-1 after:-translate-y-1/2 after:rounded-full after:bg-secondary">Featured <span class="text-secondary">Products</span></h2>
+      <div class="flex h-1 overflow-hidden rounded-full">
+        <span class="w-1/2 bg-secondary"></span>
+        <span class="w-1/2 bg-black"></span>
+      </div>
+    </div>
+    <div class="mt-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <!-- --------------------------------------------------- --------------- card  ---------------------------------------------------- --------------- -->
+      @for (prd of productList(); track prd._id) {
+        <div
+          class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 group font-sans"
+        >
+          <div class="relative overflow-hidden mb-4">
+            <img [src]="prd.imageCover" [alt]="prd.title" class="w-full h-auto object-contain" />
+
+            <!--  ! ----------- Icons  Heart ! ----------- ....  -->
+            <div class="absolute top-2 right-2 flex flex-col gap-2">
+              <button
+                class="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-secondary hover:text-white transition-all"
+              >
+                <i class="far fa-heart"></i>
+              </button>
+
+              <button
+                class="w-10 h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-secondary hover:text-white transition-all"
+              >
+                <i class="fas fa-sync-alt"></i>
+              </button>
+
+              <button
+                [routerLink]="['/details', prd._id, prd.slug]"
+                class="w-10 cursor-pointer h-10 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-secondary hover:text-white transition-all"
+              >
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <p class="text-xs text-gray-400 tracking-wide">
+              {{ prd.category.name.split(' ').slice(0, 1).join(' ') }}
+            </p>
+
+            <h3
+              class="text-lg font-medium text-slate-800 hover:text-secondary cursor-pointer transition-colors"
+            >
+              {{ prd.title }}
+            </h3>
+
+            <div class="flex items-center gap-1">
+              <div class="flex text-yellow-400 text-xs gap-0.5">
+                @for (r of [1, 2, 3, 4, 5]; track r) {
+                  @if (r <= prd.ratingsAverage) {
+                    <i class="fas fa-star"></i>
+                  } @else {
+                    <i class="far fa-star text-gray-300"></i>
+                  }
+                }
+              </div>
+              <span class="text-xs text-gray-400 font-medium">
+                {{ prd.ratingsAverage }} {{ prd.ratingsQuantity }}</span
+              >
+            </div>
+
+            <div class="flex items-center justify-between pt-2">
+              <div class="flex flex-col">
+                <span class="text-lg font-medium text-slate-900">
+                  {{ prd.price | currency: 'EUR' }}
+                </span>
+              </div>
+
+              <button
+                class="w-10 h-10 bg-secondary text-white rounded-lg flex items-center justify-center hover:bg-emerald-700 transition-colors shadow-sm active:scale-95"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 100">
+  <path d="M8 8 H112 V30 L76 48 H44 L80 30 H8 Z" fill="#0F172A"/>
+  <path d="M44 48 H76 L40 66 H112 V88 H8 V66 L44 48 Z" fill="#FF5A00"/>
+  <g transform="translate(132,18) scale(0.62)">
+    <path d="M0 16 H48 V30 H0 Z" fill="#0F172A"/>
+    <path d="M32 30 H48 L31 48 H16 Z" fill="#0F172A"/>
+    <path d="M16 48 H31 L14 66 H0 Z" fill="#FF5A00"/>
+    <path d="M0 66 H48 V80 H0 Z" fill="#FF5A00"/>
+    <path d="M58 16 H72 V80 H58 Z" fill="#0F172A"/>
+    <path d="M58 16 H98 V30 H58 Z" fill="#0F172A"/>
+    <path d="M58 45 H92 V59 H58 Z" fill="#0F172A"/>
+    <path d="M58 66 H98 V80 H58 Z" fill="#0F172A"/>
+    <path d="M108 16 H122 V80 H108 Z" fill="#0F172A"/>
+    <path d="M108 16 H122 L154 80 H140 Z" fill="#0F172A"/>
+    <path d="M140 16 H154 V80 H140 Z" fill="#0F172A"/>
+    <path d="M164 16 H212 V30 H164 Z" fill="#0F172A"/>
+    <path d="M196 30 H212 L195 48 H180 Z" fill="#0F172A"/>
+    <path d="M180 48 H195 L178 66 H164 Z" fill="#FF5A00"/>
+    <path d="M164 66 H212 V80 H164 Z" fill="#FF5A00"/>
+    <path d="M222 16 H268 V30 H222 Z" fill="#0F172A"/>
+    <path d="M222 30 H236 V48 H222 Z" fill="#0F172A"/>
+    <path d="M254 30 H268 V48 H254 Z" fill="#0F172A"/>
+    <path d="M222 48 H236 V66 H222 Z" fill="#FF5A00"/>
+    <path d="M254 48 H268 V66 H254 Z" fill="#FF5A00"/>
+    <path d="M222 66 H268 V80 H222 Z" fill="#FF5A00"/>
+  </g>
+</svg>
