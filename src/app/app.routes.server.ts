@@ -27,7 +27,7 @@ export const serverRoutes: ServerRoute[] = [
   },
   {
     path: 'checkout/:id',
-    renderMode: RenderMode.Prerender,
+    renderMode: RenderMode.Client,
   },
   {
     path: 'allorders',
