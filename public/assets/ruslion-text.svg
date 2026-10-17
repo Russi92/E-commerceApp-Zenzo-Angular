@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338 96">
+  <path d="M0 16 H12 V80 H0 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M0 16 H44 V28 H0 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M32 28 H44 V42 H32 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M0 42 H44 V54 H0 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M20 54 H32 L44 80 H32 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M58 36 H69 V80 H58 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M91 36 H102 V80 H91 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M58 69 H102 V80 H58 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M112 36 H156 V45 H112 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M112 45 H122 V53 H112 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M112 53 H156 V62 H112 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M146 62 H156 V71 H146 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M112 71 H156 V80 H112 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M166 16 H177 V80 H166 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M206 22 H218 V34 H206 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M206 40 H217 V80 H206 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M228 36 H272 V47 H228 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M228 69 H272 V80 H228 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M228 47 H239 V69 H228 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M261 47 H272 V69 H261 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M282 36 H293 V80 H282 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M282 36 H326 V47 H282 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M315 36 H326 V80 H315 Z" fill="#0F172A" stroke="#0F172A" stroke-width="5" stroke-linejoin="round"/>
+</svg>

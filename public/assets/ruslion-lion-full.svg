@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 120">
+  <g transform="translate(0,14) scale(0.55)">
+    <path d="M100 125 C80 122 66 100 72 74 C77 52 100 38 124 40" fill="none" stroke="#C6A15B" stroke-width="14" stroke-linecap="round"/>
+    <path d="M100 70 C80 68 64 80 58 104" fill="none" stroke="#C6A15B" stroke-width="9" stroke-linecap="round"/>
+    <path d="M104 95 C86 96 72 106 68 126" fill="none" stroke="#C6A15B" stroke-width="7" stroke-linecap="round"/>
+    <path d="M128 44 C145 55 158 68 166 82 L170 90 C162 100 152 107 138 110 C126 112 118 104 118 92 C118 78 122 60 128 44 Z" fill="#C6A15B"/>
+    <path d="M118 46 L132 22 L142 48 Z" fill="#C6A15B"/>
+    <path d="M40 40 H58 V160 H40 Z" fill="#C6A15B"/>
+    <path d="M40 40 H150 V62 H40 Z" fill="#C6A15B"/>
+    <path d="M40 96 H120 V118 H40 Z" fill="#C6A15B"/>
+    <path d="M84 118 H104 L148 162 H128 Z" fill="#C6A15B"/>
+    <path d="M136 70 Q144 65 152 70 Q144 75 136 70 Z" fill="#0F172A"/>
+    <path d="M160 84 L168 92 L158 96 Z" fill="#0F172A"/>
+    <path d="M158 100 C150 104 142 105 134 103" fill="none" stroke="#0F172A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="108" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="54" letter-spacing="1" fill="#C6A15B">Ruslion</text>
+  <text x="110" y="98" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="3" fill="#C6A15B">store</text>
+</svg>

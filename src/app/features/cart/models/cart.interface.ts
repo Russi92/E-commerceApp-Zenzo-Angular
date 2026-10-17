@@ -1,5 +1,14 @@
-
 export interface Cart {
+  _id: string;
+  cartOwner: string;
+  products: Product2[];
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+  totalCartPrice: number;
+}
+
+export interface Product2 {
   count: number;
   _id: string;
   product: Product;
@@ -25,7 +34,7 @@ export interface Category {
   slug: string;
   image: string;
 }
-  
+
 export interface Subcategory {
   _id: string;
   name: string;

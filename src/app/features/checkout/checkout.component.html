@@ -1,1 +1,208 @@
-<p>checkout works!</p>
+<!-- --------------------------------------------------------------- Checkout Page   ---------------------------------------------------------------  -->
+<section class="py-6 sm:py-10 lg:py-16">
+  <div class="container px-4 sm:px-6 lg:px-8">
+    <!-- ? ------------- header information  -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6 sm:mb-8 gap-4">
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center gap-3 pl-4 sm:pl-0">
+          <span
+            class="bg-secondary text-primary w-9 h-9 flex items-center justify-center rounded-md text-lg"
+          >
+            <i class="fa-solid fa-receipt"></i>
+          </span>
+          Complete Your Order
+        </h1>
+        <p class="text-gray-500 mt-1 text-sm sm:text-base">Review your items and complete your purchase</p>
+      </div>
+      <a
+        routerLink="/cart"
+        class="text-secondary hover:text-secondary/80 font-medium flex items-center gap-2 transition-colors text-sm sm:text-base"
+      >
+        <i class="fa-solid fa-arrow-left-long"></i>
+        Back to Cart
+      </a>
+    </div>
+
+    <!-- ? ------------- Form   -->
+    <div class="space-y-4 sm:space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="p-4 sm:p-6">
+          <form [formGroup]="checkOut" (ngSubmit)="submitForm()" class="space-y-4 sm:space-y-5">
+            <div formGroupName="shippingAddress">
+              <!-- city  -->
+              <div>
+                <label for="city" class="block mb-2 text-sm font-medium text-gray-900"
+                  >City <span class="text-secondary">*</span></label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 inset-s-0 flex items-center ps-3.5 pointer-events-none text-gray-400"
+                  >
+                    <i class="fa-solid fa-city text-secondary"></i>
+                  </div>
+                  <input
+                    formControlName="city"
+                    type="text"
+                    id="city"
+                    class="border-b-2 border-secondary/30 rounded-lg focus:border-b-secondary focus:border-transparent focus:ring-0 bg-transparent text-gray-900 text-sm block w-full ps-10 py-3"
+                    placeholder="e.g. Cairo, Alexandria, Giza"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Street Address   -->
+              <div class="mt-4 sm:mt-6">
+                <label for="address" class="block mb-2 text-sm font-medium text-gray-900"
+                  >Street Address <span class="text-secondary">*</span></label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 inset-s-0 flex items-start pt-3.5 ps-3.5 pointer-events-none text-gray-400"
+                  >
+                    <i class="fa-solid fa-location-dot text-secondary"></i>
+                  </div>
+                  <textarea
+                    formControlName="details"
+                    id="address"
+                    rows="3"
+                    class="border-b-2 border-secondary/30 rounded-lg focus:border-b-secondary focus:border-transparent focus:ring-0 bg-transparent text-gray-900 text-sm block w-full ps-10 py-3"
+                    placeholder="Street name, building number, floor, apartment..."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- phone  -->
+              <div class="mt-4 sm:mt-6">
+                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900"
+                  >Phone Number <span class="text-secondary">*</span></label
+                >
+                <div class="relative">
+                  <div
+                    class="absolute inset-y-0 inset-s-0 flex items-center ps-3.5 pointer-events-none text-gray-400"
+                  >
+                    <i class="fa-solid fa-phone text-secondary"></i>
+                  </div>
+                  <input
+                    formControlName="phone"
+                    type="tel"
+                    id="phone"
+                    class="border-b-2 border-secondary/30 rounded-lg focus:border-b-secondary focus:border-transparent focus:ring-0 bg-transparent text-gray-900 text-sm block w-full ps-10 py-3"
+                    placeholder="01xxxxxxxxx"
+                    required
+                  />
+                  <div
+                    class="absolute inset-y-0 inset-e-0 flex items-center pe-3 pointer-events-none"
+                  >
+                    <span class="text-xs text-secondary">Egyptian numbers only</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- buttons payment  -->
+              <div class="group grid pt-3 sm:pt-5 md:grid-cols-3 gap-4 sm:gap-6">
+                <div class="md:col-span-2 space-y-4 sm:space-y-6">
+                  <div class="space-y-3 sm:space-y-4">
+                    <label for="payment-cod" class="block relative">
+                      <input
+                        #ref1
+                        type="radio"
+                        id="payment-cod"
+                        name="payment_method"
+                        value="cash"
+                        class="peer sr-only"
+                        checked
+                        (change)="changeFlag(ref1)"
+                      />
+
+                      <div
+                        class="p-4 sm:p-5 bg-white border-2 border-secondary/20 rounded-2xl cursor-pointer transition-all duration-200 ease-in-out peer-checked:border-secondary peer-checked:bg-secondary/10 hover:border-secondary/50"
+                      >
+                        <div class="flex items-center justify-between gap-4">
+                          <div class="flex items-center gap-4 grow">
+                            <div
+                              class="w-14 h-14 bg-secondary text-primary rounded-xl flex items-center justify-center transition-colors placeholder-secondary"
+                            >
+                              <i class="fas fa-money-bill-wave text-xl"></i>
+                            </div>
+                            <div>
+                              <h3 class="font-bold text-lg text-primary">Cash on Delivery</h3>
+                              <p class="text-sm text-secondary/70">
+                                Pay when your order arrives at your doorstep
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+
+                    <label for="payment-card" class="block relative">
+                      <input
+                        #ref2
+                        type="radio"
+                        id="payment-card"
+                        name="payment_method"
+                        value="visa"
+                        class="peer sr-only"
+                        (change)="changeFlag(ref2)"
+                      />
+
+                      <div
+                        class="p-4 sm:p-5 bg-white border-2 border-secondary/20 rounded-2xl cursor-pointer transition-all duration-200 ease-in-out peer-checked:border-secondary peer-checked:bg-secondary/10 hover:border-secondary/50"
+                      >
+                        <div class="flex items-center justify-between gap-4">
+                          <div class="flex items-center gap-4 grow">
+                            <div
+                              class="w-14 h-14 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center transition-colors peer-checked:bg-secondary peer-checked:text-white"
+                            >
+                              <i class="fas fa-credit-card text-xl"></i>
+                            </div>
+                            <div>
+                              <h3 class="font-bold text-lg text-primary">Pay Online</h3>
+                              <p class="text-sm text-secondary/70">
+                                Secure payment with Credit/Debit Card via Stripe
+                              </p>
+                              <div class="flex items-center gap-2 mt-1">
+                                <i class="fab fa-cc-visa text-2xl text-secondary"></i>
+                                <i class="fab fa-cc-mastercard text-2xl text-secondary"></i>
+                                <i class="fab fa-cc-amex text-2xl text-secondary"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- 2 buttons  -->
+                <div
+                  class="md:col-span-1 p-4 sm:p-6 bg-white border border-gray-100 rounded-2xl shadow-sm h-fit sticky top-6 sm:top-8 space-y-4 sm:space-y-5"
+                >
+                  <div class="pt-2 sm:pt-3">
+                    <button
+                      type="submit"
+                      class="w-full cursor-pointer py-3 sm:py-3.5 px-4 rounded-lg bg-secondary text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors hidden group-has-[#payment-cod:checked]:flex"
+                    >
+                      <i class="fas fa-shopping-bag text-sm sm:text-base"></i>
+                      Place Order
+                    </button>
+
+                    <button
+                      type="submit"
+                      class="w-full py-3 cursor-pointer sm:py-3.5 px-4 rounded-lg bg-secondary text-white font-semibold text-sm flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors hidden group-has-[#payment-card:checked]:flex"
+                    >
+                      <i class="fas fa-shield-alt text-sm sm:text-base"></i>
+                      Proceed to Payment
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

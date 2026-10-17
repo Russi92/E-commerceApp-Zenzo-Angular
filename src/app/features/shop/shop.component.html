@@ -1,1 +1,42 @@
-<p>shop works!</p>
+<section class="py-10">
+  <div class="container">
+    <div class="ml-4 sm:ml-0 inline-block">
+      <h2
+        class="relative pb-3 text-2xl sm:text-3xl font-semibold after:content-[''] after:absolute after:-left-3 after:top-[38%] after:h-[62%] after:w-1 after:-translate-y-1/2 after:rounded-full after:bg-secondary"
+      >
+        Featured <span class="text-secondary">Products</span>
+      </h2>
+      <div class="flex h-1 overflow-hidden rounded-full">
+        <span class="w-1/2 bg-secondary"></span>
+        <span class="w-1/2 bg-black"></span>
+      </div>
+    </div>
+    <div class="mt-5 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <!-- --------------------------------------------------- --------------- card  ---------------------------------------------------- --------------- -->
+      @for (prd of productList() | paginate: { id: 'foo',
+                                                      itemsPerPage: pageSize(),
+                                                      currentPage: cp(),
+                                                      totalItems: total() }  ; track prd._id){
+        <app-card [prd]="prd" />
+      }
+    </div>
+
+<div class="flex justify-center items-center my-4">
+<pagination-controls  id="foo"
+                      (pageChange)="pageChange($event)"
+                      [maxSize]="9"
+                      [directionLinks]="true"
+                      [autoHide]="true"
+                      [responsive]="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+
+</div>
+  </div>
+</section>
+
+

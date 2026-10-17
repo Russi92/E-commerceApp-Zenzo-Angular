@@ -66,23 +66,31 @@ src="/assets/zenzo-full2.svg"
       </button>
       <button
         routerLink="/whishlist" routerLinkActive="text-primary"
-        class="relative flex h-10 w-10 items-center justify-center rounded-full text-gray-600 transition-all hover:bg-gray-100 hover:text-emerald-600"
+        class="relative cursor-pointer flex h-10 w-10 items-center justify-center rounded-full text-gray-600 transition-all hover:bg-gray-100 hover:text-emerald-600"
       >
         <i class="far fa-heart text-xl"></i>
       </button>
       <button
         routerLink="/cart" routerLinkActive="text-primary"
-        class="relative flex h-10 w-10 items-center justify-center rounded-full text-gray-600 transition-all hover:bg-gray-100 hover:text-emerald-600"
+        class="relative cursor-pointer flex h-10 w-10 items-center justify-center rounded-full text-gray-600 transition-all hover:bg-gray-100 hover:text-emerald-600"
       >
         <i class="fas fa-shopping-cart text-xl"></i>
         <span
           class="absolute right-1 top-1 rounded-full border-2 border-white bg-secondary px-1.5 text-2xs font-bold text-white"
-          >3</span
+          >{{count()}}</span
         >
       </button>
 
       <div class="hidden sm:flex items-center gap-4 pl-2 md:border-l md:border-gray-200 md:pl-4">
-        <a routerLink="/login" routerLinkActive="bg-secondary/80 text-white px-3 py-1 rounded"
+     @if (logged()) {
+        <button
+          (click)="logOut()"
+          class="flex items-center gap-2 font-medium text-gray-700 transition-colors cursor-pointer"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal"></i> LogOut
+        </button>
+     }@else {
+         <a routerLink="/login" routerLinkActive="bg-secondary/80 text-white px-3 py-1 rounded"
           class="flex items-center gap-2 font-medium text-gray-700 transition-colors"
         >
           <i class="far fa-user text-lg"></i> Log In
@@ -92,6 +100,7 @@ src="/assets/zenzo-full2.svg"
         >
           <i class="fas fa-user-plus text-lg"></i> Register
         </a>
+     }
       </div>
 
       <!-- dropdown when login -->
@@ -146,10 +155,10 @@ src="/assets/zenzo-full2.svg"
 
   <!-- links  -->
   <nav class="mb-1 border-b border-gray-100 pb-2">
-    <ul class="space-y-5 font-medium text-gray-800">
-      <li><a  routerLink="/"routerLinkActive="bg-secondary text-white px-3 py-1 rounded" [routerLinkActiveOptions]="{ exact: true }" class="block transition-colors">Home</a></li>
-      <li><a  routerLink="/shop" routerLinkActive="bg-secondary text-white px-3 py-1 rounded" class="block transition-colors">Shop</a></li>
-      <li><a  routerLink="/categories" routerLinkActive="bg-secondary text-white px-3 py-1 rounded" class="block transition-colors">Categories</a></li>
+    <ul class="space-y-2 font-medium text-gray-800">
+      <li><a  routerLink="/"routerLinkActive="bg-secondary text-white px-3 py-1 rounded" [routerLinkActiveOptions]="{ exact: true }" class="group flex items-center gap-1 rounded-xl p-1 transition-colors"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary/10 text-secondary group-[.bg-secondary]:bg-white/25 group-[.bg-secondary]:text-white"><i class="fa-solid fa-house text-lg"></i></div><span>Home</span></a></li>
+      <li><a  routerLink="/shop" routerLinkActive="bg-secondary text-white px-3 py-1 rounded" class="group flex items-center gap-1 rounded-xl p-1 transition-colors"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary/10 text-secondary group-[.bg-secondary]:bg-white/25 group-[.bg-secondary]:text-white"><i class="fa-solid fa-bag-shopping text-lg"></i></div><span>Shop</span></a></li>
+      <li><a  routerLink="/categories" routerLinkActive="bg-secondary text-white px-3 py-1 rounded" class="group flex items-center gap-1 rounded-xl p-1 transition-colors"><div class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary/10 text-secondary group-[.bg-secondary]:bg-white/25 group-[.bg-secondary]:text-white"><i class="fa-solid fa-layer-group text-lg"></i></div><span>Categories</span></a></li>
     </ul>
   </nav>
 
@@ -166,11 +175,11 @@ src="/assets/zenzo-full2.svg"
       class="group flex cursor-pointer items-center gap-1 rounded-xl p-1 transition-colors hover:bg-gray-50"
     >
       <div
-        class="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"
+        class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary/10 text-secondary group-[.bg-secondary]:bg-white/25 group-[.bg-secondary]:text-white"
       >
         <i class="fas fa-shopping-cart text-lg"></i>
       </div>
-      <span class="font-medium text-gray-700 group-hover:text-emerald-600" routerLinkActive="bg-secondary text-white px-3 py-1 rounded">My Cart</span>
+      <span class="font-medium text-gray-700 group-hover:text-secondary" routerLinkActive="bg-secondary text-white px-3 py-1 rounded">My Cart</span>
     </a>
   </div>
 

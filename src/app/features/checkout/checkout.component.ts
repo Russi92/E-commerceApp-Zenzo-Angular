@@ -1,11 +1,69 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { CartService } from '../../core/services/cart.service';
 
 @Component({
   selector: 'app-checkout',
-  imports: [],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css',
 })
-export class CheckoutComponent {
+export class CheckoutComponent implements OnInit {
+  private readonly activatedRoute = inject(ActivatedRoute);
+  private readonly fb = inject(FormBuilder);
+  private readonly cartService = inject(CartService);
+  private readonly router = inject(Router);
 
+  cartId = signal<string>('');
+  flag = signal<string>('cash');
+
+  checkOut: FormGroup = this.fb.group({
+    shippingAddress: this.fb.group({
+      details: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+    }),
+  });
+
+  ngOnInit(): void {
+    this.getCartId();
+  }
+
+  getCartId(): void {
+    this.activatedRoute.paramMap.subscribe((params) => {
+      // console.log(params.get('id'));
+      this.cartId.set(params.get('id')!);
+    });
+  }
+
+  submitForm(): void {
+    if (this.checkOut.valid) {
+      if (this.flag() === 'cash') {
+        this.cartService.createCashOrder(this.cartId(), this.checkOut.value).subscribe({
+          next: (res) => {
+            console.log(res);
+            if (res.status === 'success') {
+              //navigate all orders
+              this.router.navigate(['/allorders']);
+            }
+          },
+        });
+      } else {
+        this.cartService.createVisaOrder(this.cartId(), this.checkOut.value).subscribe({
+          next: (res) => {
+            console.log(res);
+            if (res.status === 'success') {
+              //open url
+              window.open(res.session.url, '_self');
+            }
+          },
+        });
+      }
+    }
+  }
+
+  changeFlag(el: HTMLInputElement): void {
+    this.flag.set(el.value);
+  }
 }

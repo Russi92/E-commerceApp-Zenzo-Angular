@@ -26,11 +26,11 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
   },
   {
-    path: 'checkout',
+    path: 'checkout/:id',
     renderMode: RenderMode.Prerender,
   },
   {
-    path: 'order',
+    path: 'allorders',
     renderMode: RenderMode.Prerender,
   },
   {
